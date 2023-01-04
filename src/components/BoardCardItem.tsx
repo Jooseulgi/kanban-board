@@ -1,7 +1,7 @@
 import { HiOutlineTrash } from 'react-icons/hi';
 import { useRecoilState, useSetRecoilState } from 'recoil';
 import { cardItemState } from '../recoil/cardItem';
-import { detailState } from '../recoil/detail';
+import { detailIdState } from '../recoil/detail';
 import { CardItemType } from '../types';
 import * as S from './index.style';
 
@@ -10,27 +10,28 @@ interface Props {
 }
 export default function BoardCardItem({ item }: Props) {
   const [card, setCard] = useRecoilState(cardItemState);
-  const setDetailShow = useSetRecoilState(detailState);
+  const setDetailShow = useSetRecoilState(detailIdState);
 
   const handleDetailShow = (id: string) => {
-    setDetailShow({ id });
+    setDetailShow(id);
   };
 
-  const onDeleteCard = (id: string) => {
+  const handleDeleteCard = (id: string) => {
     setCard(card.filter(el => el.id !== id));
   };
+
   return (
     <S.CardItem
       onClick={() => {
         handleDetailShow(item.id);
       }}
     >
-      <div>제목 없음</div>
+      <div>{!item.title ? '제목없음' : item.title}</div>
       <S.ModifyBtn>
         <button
           type="button"
           onClick={() => {
-            onDeleteCard(item.id);
+            handleDeleteCard(item.id);
           }}
         >
           <HiOutlineTrash />

@@ -14,6 +14,7 @@ export const CreateBtn = styled.button`
 
 export const BoardCard = styled.div`
   margin: 10px 30px;
+  min-width: 260px;
 `;
 
 // BoardCardItem.tsx

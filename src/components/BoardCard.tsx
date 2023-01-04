@@ -11,7 +11,7 @@ interface Props {
 export default function BoardCard({ taskType, children }: Props) {
   const setCard = useSetRecoilState(cardItemState);
 
-  const onCreateCard = () => {
+  const handleCreateCard = () => {
     setCard(prev => [
       ...prev,
       {
@@ -29,7 +29,7 @@ export default function BoardCard({ taskType, children }: Props) {
     <S.BoardCard>
       <p>{taskType}</p>
       <ul>{children}</ul>
-      <S.CreateBtn onClick={onCreateCard}>+ 새로 만들기</S.CreateBtn>
+      <S.CreateBtn onClick={handleCreateCard}>+ 새로 만들기</S.CreateBtn>
     </S.BoardCard>
   );
 }
