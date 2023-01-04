@@ -7,8 +7,9 @@ import * as S from './index.style';
 
 interface Props {
   item: CardItemType;
+  handleDragging: (dragging: boolean) => void;
 }
-export default function BoardCardItem({ item }: Props) {
+export default function BoardCardItem({ item, handleDragging }: Props) {
   const [card, setCard] = useRecoilState(cardItemState);
   const setDetailShow = useSetRecoilState(detailIdState);
 
@@ -20,11 +21,20 @@ export default function BoardCardItem({ item }: Props) {
     setCard(card.filter(el => el.id !== id));
   };
 
+  const handleDragStart = (e: React.DragEvent<HTMLLIElement>) => {
+    e.dataTransfer.setData('data', item.id);
+    handleDragging(true);
+  };
+  const handleDragEnd = () => handleDragging(false);
+
   return (
     <S.CardItem
       onClick={() => {
         handleDetailShow(item.id);
       }}
+      draggable
+      onDragStart={handleDragStart}
+      onDragEnd={handleDragEnd}
     >
       <div>{!item.title ? '제목없음' : item.title}</div>
       <S.ModifyBtn>

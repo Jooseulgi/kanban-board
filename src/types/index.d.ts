@@ -2,7 +2,7 @@ export interface CardItemType {
   id: string;
   title: string;
   date: string;
-  state: any;
+  state: string;
   manager: string;
   content: string;
 }

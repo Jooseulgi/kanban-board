@@ -2,9 +2,7 @@ import { useRecoilValue } from 'recoil';
 import { cardItemState } from '../recoil/cardItem';
 import { detailIdState } from '../recoil/detail';
 import { TASK } from '../util/constants';
-import BoardCard from './BoardCard';
-import BoardCardItem from './BoardCardItem';
-import BoardDetail from './BoardDetail';
+import { BoardCard, BoardDetail } from './index';
 import * as S from './index.style';
 
 export default function BoardList() {
@@ -12,18 +10,18 @@ export default function BoardList() {
   const detailShow = useRecoilValue(detailIdState);
 
   const taskFilter = (task: string) => {
-    const filteredCard = card
-      .filter(data => data.state === task)
-      .map(item => <BoardCardItem key={item.id} item={item} />);
+    const filteredCard = card.filter(data => data.state === task);
     return filteredCard;
   };
 
   return (
     <S.BoardList>
       {TASK?.map(item => (
-        <BoardCard key={item.id} taskType={item.task}>
-          {taskFilter(item.task)}
-        </BoardCard>
+        <BoardCard
+          key={item.id}
+          taskType={item.task}
+          filteredCard={taskFilter(item.task)}
+        />
       ))}
       {card.map(
         item =>

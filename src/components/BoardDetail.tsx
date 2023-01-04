@@ -37,7 +37,7 @@ export default function BoardDetail({ item }: Props) {
     <S.BoardDetail>
       <S.DetailForm>
         <div>
-          제목:{' '}
+          제목:
           <input
             type="text"
             value={value.title}
@@ -48,6 +48,7 @@ export default function BoardDetail({ item }: Props) {
         </div>
         <div>고유번호 : {id}</div>
         <div>
+          마감일 :
           <input
             type="datetime-local"
             value={value.date}
