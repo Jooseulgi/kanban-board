@@ -1,22 +1,35 @@
-import React, { ChangeEvent, useState } from 'react';
+import { useSetRecoilState } from 'recoil';
+import { v4 as uuidv4 } from 'uuid';
+import { cardItemState } from '../recoil/cardItem';
+import * as S from './index.style';
 
-export default function BoardCard() {
-  const [value, setValue] = useState('');
+interface Props {
+  taskType: string;
+  children: any;
+}
 
-  const onChangeValue = (e: ChangeEvent<HTMLInputElement>) => {
-    setValue(e.target.value);
-    console.log(value);
+export default function BoardCard({ taskType, children }: Props) {
+  const setCard = useSetRecoilState(cardItemState);
+
+  const onCreateCard = () => {
+    setCard(prev => [
+      ...prev,
+      {
+        id: uuidv4(),
+        title: '',
+        date: '',
+        state: taskType,
+        manager: '',
+        content: '',
+      },
+    ]);
   };
 
   return (
-    <div>
-      리스트
-      <div>
-        <form>
-          <input type="text" value={value} onChange={onChangeValue} />
-        </form>
-      </div>
-      <button type="button">+ 새로만들기</button>
-    </div>
+    <S.BoardCard>
+      <p>{taskType}</p>
+      <ul>{children}</ul>
+      <S.CreateBtn onClick={onCreateCard}>+ 새로 만들기</S.CreateBtn>
+    </S.BoardCard>
   );
 }
