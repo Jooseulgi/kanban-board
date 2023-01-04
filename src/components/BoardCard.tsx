@@ -40,7 +40,10 @@ export default function BoardCard({ taskType, filteredCard }: Props) {
   return (
     <S.BoardCard>
       <p>{taskType}</p>
-      <ul onDrop={e => handleDrop(e)} onDragOver={e => handleDragOver(e)}>
+      <S.BoardCardList
+        onDrop={e => handleDrop(e)}
+        onDragOver={e => handleDragOver(e)}
+      >
         {filteredCard?.map(
           (item: CardItemType) =>
             item.state === taskType && (
@@ -51,7 +54,7 @@ export default function BoardCard({ taskType, filteredCard }: Props) {
               />
             ),
         )}
-      </ul>
+      </S.BoardCardList>
       <S.CreateBtn onClick={handleCreateCard}>+ 새로 만들기</S.CreateBtn>
     </S.BoardCard>
   );

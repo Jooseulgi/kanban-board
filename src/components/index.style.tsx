@@ -8,13 +8,16 @@ export const BoardList = styled.div`
 // BoardCard.tsx
 export const CreateBtn = styled.button`
   display: flex;
-  margin-top: 10px;
   color: #999;
 `;
 
 export const BoardCard = styled.div`
   margin: 10px 30px;
   min-width: 260px;
+`;
+
+export const BoardCardList = styled.ul`
+  min-height: 20px;
 `;
 
 // BoardCardItem.tsx
