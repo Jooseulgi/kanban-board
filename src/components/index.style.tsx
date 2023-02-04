@@ -32,7 +32,6 @@ export const CardTitle = styled.div`
   background: #fafafa;
   padding: 5px;
   border-radius: 5px;
-  font-size: 14px;
   h2 {
     font-weight: bold;
   }
@@ -56,7 +55,6 @@ export const CardItem = styled.li`
   border: 1px solid #ddd;
   border-radius: 4px;
   box-shadow: 2px 2px 2px #f9f9f9;
-  font-size: 16px;
   cursor: pointer;
   transition: background 0.2s;
   &:hover {
@@ -68,7 +66,6 @@ export const ItemTitle = styled.p`
   display: flex;
   align-items: center;
   padding-right: 18px;
-  font-size: 14px;
   svg {
     flex: none;
     margin-right: 5px;
@@ -105,15 +102,12 @@ export const BoardBox = styled.div`
   height: 400px;
   padding: 30px;
   border-radius: 10px;
-  font-size: 14px;
 `;
-
-export const DetailForm = styled.div``;
 
 export const FormList = styled.div`
   display: flex;
   align-items: center;
-  margin: 12px 0;
+  margin: 10px 0;
   span {
     width: 50px;
     flex: none;
@@ -124,7 +118,10 @@ export const FormList = styled.div`
     border: 1px solid #d9d9d9;
     border-radius: 5px;
     padding: 5px;
-    font-size: 14px;
+
+    &:focus {
+      outline: 1px solid #4096ff;
+    }
   }
   input[type='text'] {
     width: 100%;
@@ -139,4 +136,22 @@ export const FormList = styled.div`
 export const FlexBox = styled.div`
   display: flex;
   justify-content: space-between;
+`;
+
+export const FormBtn = styled.div`
+  margin-top: 20px;
+  text-align: right;
+  button {
+    margin-left: 10px;
+    padding: 4px 15px;
+    letter-spacing: 1px;
+    border: 1px solid #d9d9d9;
+    border-radius: 5px;
+    box-shadow: 0 2px 0 rgb(0 0 0 / 2%);
+    transition: 0.2s;
+    &:hover {
+      color: #4096ff;
+      border: 1px solid #4096ff;
+    }
+  }
 `;
