@@ -15,18 +15,21 @@ export default function BoardList() {
   };
 
   return (
-    <S.BoardList>
-      {TASK?.map(item => (
-        <BoardCard
-          key={item.id}
-          taskType={item.task}
-          filteredCard={taskFilter(item.task)}
-        />
-      ))}
-      {card.map(
-        item =>
-          item.id === detailShow && <BoardDetail key={item.id} item={item} />,
-      )}
-    </S.BoardList>
+    <S.BoardWrap>
+      <h1>TASK PLAN BOARD</h1>
+      <S.BoardList>
+        {TASK?.map(item => (
+          <BoardCard
+            key={item.id}
+            taskType={item.task}
+            filteredCard={taskFilter(item.task)}
+          />
+        ))}
+        {card.map(
+          item =>
+            item.id === detailShow && <BoardDetail key={item.id} item={item} />,
+        )}
+      </S.BoardList>
+    </S.BoardWrap>
   );
 }

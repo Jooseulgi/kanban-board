@@ -1,4 +1,5 @@
 import { HiOutlineTrash } from 'react-icons/hi';
+import { BsList } from 'react-icons/bs';
 import { useRecoilState, useSetRecoilState } from 'recoil';
 import { cardItemState } from '../recoil/cardItem';
 import { detailIdState } from '../recoil/detail';
@@ -36,7 +37,10 @@ export default function BoardCardItem({ item, handleDragging }: Props) {
       onDragStart={handleDragStart}
       onDragEnd={handleDragEnd}
     >
-      <div>{!item.title ? '제목없음' : item.title}</div>
+      <S.ItemTitle>
+        <BsList />
+        {!item.title ? '제목없음' : item.title}
+      </S.ItemTitle>
       <S.ModifyBtn>
         <button
           type="button"

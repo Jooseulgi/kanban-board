@@ -11,6 +11,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: whitesmoke;
 }
 
 code {
@@ -22,6 +23,16 @@ ol,
 ul,
 li {
   list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: normal;
 }
 
 table {
@@ -57,10 +68,6 @@ button {
   font-size: 1rem;
 }
 
-input[type='text'] {
-  border-bottom: 1px solid #999;
-}
-
 input[type='number'] {
   font-feature-settings: 'tnum';
 
@@ -69,4 +76,8 @@ input[type='number'] {
     margin: 0;
     -webkit-appearance: none;
   }
+}
+
+#root {
+  margin: 30px;
 }

@@ -35,73 +35,76 @@ export default function BoardDetail({ item }: Props) {
   if (!id) return <div />;
   return (
     <S.BoardDetail>
-      <S.DetailForm>
+      <S.BoardBox>
+        <S.DetailForm>
+          <S.FormList>
+            <span>제목</span>
+            <input
+              type="text"
+              value={value.title}
+              onChange={e => {
+                handleChangeValue(e, 'title');
+              }}
+            />
+          </S.FormList>
+          <S.FlexBox>
+            <S.FormList>
+              <span>마감일</span>
+              <input
+                type="datetime-local"
+                value={value.date}
+                onChange={e => {
+                  handleChangeValue(e, 'date');
+                }}
+              />
+            </S.FormList>
+            <S.FormList>
+              <span>상태</span>
+              <select
+                onChange={e => {
+                  handleChangeValue(e, 'state');
+                }}
+                defaultValue={state}
+              >
+                {TASK.map(v => (
+                  <option label={v.task} key={v.id}>
+                    {v.task}
+                  </option>
+                ))}
+              </select>
+            </S.FormList>
+            <S.FormList>
+              <span>담당자</span>
+              <input
+                type="text"
+                value={value.manager}
+                onChange={e => {
+                  handleChangeValue(e, 'manager');
+                }}
+              />
+            </S.FormList>
+          </S.FlexBox>
+          <S.FormList>
+            <span>내용</span>
+            <textarea
+              name=""
+              id=""
+              value={value.content}
+              onChange={e => {
+                handleChangeValue(e, 'content');
+              }}
+            />
+          </S.FormList>
+        </S.DetailForm>
         <div>
-          제목:
-          <input
-            type="text"
-            value={value.title}
-            onChange={e => {
-              handleChangeValue(e, 'title');
-            }}
-          />
+          <button type="button" onClick={handleSubmit}>
+            저장
+          </button>
+          <button type="button" onClick={() => setDetailShow('')}>
+            닫기
+          </button>
         </div>
-        <div>고유번호 : {id}</div>
-        <div>
-          마감일 :
-          <input
-            type="datetime-local"
-            value={value.date}
-            onChange={e => {
-              handleChangeValue(e, 'date');
-            }}
-          />
-        </div>
-        <div>
-          상태 :
-          <select
-            onChange={e => {
-              handleChangeValue(e, 'state');
-            }}
-            defaultValue={state}
-          >
-            {TASK.map(v => (
-              <option label={v.task} key={v.id}>
-                {v.task}
-              </option>
-            ))}
-          </select>
-        </div>
-        <div>
-          담당자 :
-          <input
-            type="text"
-            value={value.manager}
-            onChange={e => {
-              handleChangeValue(e, 'manager');
-            }}
-          />
-        </div>
-        <div>
-          내용 :
-          <textarea
-            name=""
-            id=""
-            value={value.content}
-            onChange={e => {
-              handleChangeValue(e, 'content');
-            }}
-          />
-        </div>
-      </S.DetailForm>
-      <div>
-        <button type="button" onClick={handleSubmit}>
-          저장
-        </button>
-        <button type="button" onClick={() => setDetailShow('')}>
-          닫기
-        </button>
-      </div>
+      </S.BoardBox>
     </S.BoardDetail>
   );
 }
