@@ -39,7 +39,10 @@ export default function BoardCard({ taskType, filteredCard }: Props) {
     e.preventDefault();
   return (
     <S.BoardCard>
-      <p>{taskType}</p>
+      <div>
+        <span>{taskType}</span>
+        <span>{filteredCard.length}</span>
+      </div>
       <S.BoardCardList
         onDrop={e => handleDrop(e)}
         onDragOver={e => handleDragOver(e)}

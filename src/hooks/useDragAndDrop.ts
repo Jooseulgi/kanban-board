@@ -8,7 +8,7 @@ export const useDragAndDrop = () => {
 
   const handleUpdateList = (id: string, task: string) => {
     const filteredCard = card.find(item => item.id === id);
-    if (filteredCard && filteredCard.state !== task) {
+    if (filteredCard) {
       if (Array.isArray(card)) {
         setCard(prev => [
           { ...filteredCard, state: task },

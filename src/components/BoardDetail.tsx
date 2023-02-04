@@ -28,7 +28,7 @@ export default function BoardDetail({ item }: Props) {
   };
 
   const handleSubmit = () => {
-    const newCard = card.map(e => (e.id === id ? { id, ...value } : e));
+    const newCard = card.map(el => (el.id === id ? { id, ...value } : el));
     setCard(newCard);
   };
 
@@ -72,7 +72,16 @@ export default function BoardDetail({ item }: Props) {
             ))}
           </select>
         </div>
-        <div>담당자 : </div>
+        <div>
+          담당자 :
+          <input
+            type="text"
+            value={value.manager}
+            onChange={e => {
+              handleChangeValue(e, 'manager');
+            }}
+          />
+        </div>
         <div>
           내용 :
           <textarea
