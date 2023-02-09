@@ -37,7 +37,7 @@ kanban board 스타일의 CRUD 구현 및 Drag & Drop 이벤트 활용
 <img width="70%" src="https://user-images.githubusercontent.com/54945205/217711923-6a6ac3cf-a2b4-4d7e-9234-98a7f653e749.gif">
 
 - `reoil`에 effects 옵션을 사용해 [로컬 스토리지에 저장](https://github.com/Jooseulgi/kanban-board/blob/master/src/recoil/cardItem.ts)
-- `cardItemState`가 변경 될 때 마다 [`localStorageEffect` 이벤트 실행](https://github.com/Jooseulgi/kanban-board/blob/master/src/util/localstorage.ts)
+- `cardItemState`가 변경 될 때 마다 [localStorageEffect 이벤트 실행](https://github.com/Jooseulgi/kanban-board/blob/master/src/util/localstorage.ts)
 
 <br/>
 
