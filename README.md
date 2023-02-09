@@ -1,4 +1,4 @@
-## Kanban-Board
+# Kanban-Board
 
 ## 프로젝트 개요
 
@@ -98,7 +98,7 @@ $ npm start
 
 ## 사용 기술
 
-![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white) ![Recoil](https://img.shields.io/badge/Recoil-5A29E4?style=for-the-badge&logo=&logoColor=white) ![Styled-Components](https://img.shields.io/badge/Styled%20components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white) <br/>
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white) ![Recoil](https://img.shields.io/badge/Recoil-5A29E4?style=for-the-badge&logo=&logoColor=white) ![Styled-Components](https://img.shields.io/badge/Styled%20components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white) <br/>
 
 - <b>TypeScript</b>
   - 컴파일 단계에서 오류 확인이 가능해 코드의 안정성을 주고 type 학습을 위해 선택했다.
