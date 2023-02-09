@@ -128,7 +128,7 @@ redux-comment
 ├─ ⚙️ package-lock.json
 ├─ ⚙️ package.json
 ├─  README.md
-└─  ⚙️ tsconfig.json
+└─ ⚙️ tsconfig.json
 ```
 
 <br/>
