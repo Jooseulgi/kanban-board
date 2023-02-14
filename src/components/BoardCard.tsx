@@ -8,7 +8,7 @@ import * as S from './index.style';
 
 interface Props {
   taskType: string;
-  filteredCard: any;
+  filteredCard: CardItemType[];
 }
 
 export default function BoardCard({ taskType, filteredCard }: Props) {

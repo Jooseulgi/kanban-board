@@ -1,3 +1,5 @@
+import { CardItemType } from '../types';
+
 export const localStorageEffect =
   (key: string) =>
   ({ setSelf, onSet }: any) => {
@@ -5,7 +7,7 @@ export const localStorageEffect =
     if (savedValue != null) {
       setSelf(JSON.parse(savedValue));
     }
-    onSet((newValue: any, _: any, isReset: boolean) =>
+    onSet((newValue: CardItemType[], _: any, isReset: boolean) =>
       isReset
         ? localStorage.removeItem(key)
         : localStorage.setItem(key, JSON.stringify(newValue)),

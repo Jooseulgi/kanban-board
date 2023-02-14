@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { ChangeEvent, useState } from 'react';
 import { useRecoilState, useSetRecoilState } from 'recoil';
 import { cardItemState } from '../recoil/cardItem';
 import { detailIdState } from '../recoil/detail';
@@ -23,7 +23,10 @@ export default function BoardDetail({ item }: Props) {
     content,
   });
 
-  const handleChangeValue = (e: any, k: string) => {
+  const handleChangeValue = (
+    e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>,
+    k: string,
+  ) => {
     setValue({ ...value, [k]: e.target.value });
   };
 
